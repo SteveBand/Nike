@@ -1,8 +1,11 @@
 import React from "react";
-
+import { Nav } from "../components/navbar";
 function Dashboard() {
-  return <React.StrictMode></React.StrictMode>;
+  return (
+    <main>
+      <Nav />
+    </main>
+  );
 }
-
 
 export default Dashboard;
