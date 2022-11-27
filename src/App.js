@@ -1,12 +1,11 @@
-import React from 'react';
-import Dashboard from './flows/dashboard';
-
+import React from "react";
+import Dashboard from "./flows/dashboard";
 
 function App() {
   return (
     <React.StrictMode>
       <Dashboard />
-   </React.StrictMode>
+    </React.StrictMode>
   );
 }
 

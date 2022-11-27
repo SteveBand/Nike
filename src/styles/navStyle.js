@@ -23,6 +23,12 @@ export const Wrapper = styled.section`
     list-style: none;
     font-size: 13px;
     color: #727276;
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: white;
+    transition: all 0.7s ease;
   }
 
   .logo {
@@ -38,18 +44,67 @@ export const Wrapper = styled.section`
     right: 2%;
     display: flex;
     justify-content: space-between;
-    width: 4vw;
+    width: 5vw;
   }
 
   .cart {
     font-size: 1.1rem;
     display: flex;
-    padding: 8px;
-    border-radius: 100%;
+    place-items: center;
+    padding: 4px 10px;
+    border-radius: 50%;
     background-color: #fe6629;
+    cursor: pointer;
   }
 
   .list {
     padding: 8px;
+    color: white;
+  }
+
+  .list-btn {
+    font-size: 1.4rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 9vh;
+    .logo {
+      font-size: 2rem;
+      left: 2%;
+      margin-right: 2rem;
+    }
+    .links {
+      min-width: 70%;
+      max-width: 250px;
+      margin: auto;
+    }
+    ul {
+      width: 80%;
+      justify-content: space-around;
+    }
+    li {
+      font-size: 14px;
+      padding: 0 0.25rem;
+    }
+    .cart-more {
+      width: 5%;
+      right: 10%;
+      height: 3rem;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    .cart {
+      font-size: 0.9rem;
+      max-height: 1rem;
+      padding: 6px;
+    }
+    .list {
+      padding: 0;
+      margin: 6px;
+    }
   }
 `;
