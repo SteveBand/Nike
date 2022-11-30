@@ -6,7 +6,7 @@ export const Wrapper = styled.footer`
   align-items: center;
   width: 100%;
   min-height: 25vh;
-  font-family:'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 
   .price-btn {
     padding: 1.2rem 3.4rem;
@@ -21,7 +21,7 @@ export const Wrapper = styled.footer`
     padding: 1.4rem 1.2rem;
     font-size: 1.2rem;
     color: white;
-    background-color: #F8672E;
+    background-color: #f8672e;
     cursor: pointer;
   }
 

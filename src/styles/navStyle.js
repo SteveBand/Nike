@@ -18,7 +18,8 @@ export const Wrapper = styled.section`
     width: 30vw;
   }
 
-  li {
+  li,
+  .link-btn {
     text-decoration: none;
     list-style: none;
     font-size: 13px;
@@ -26,9 +27,11 @@ export const Wrapper = styled.section`
     cursor: pointer;
   }
 
-  li:hover {
+  li:hover,
+  .link-btn:hover {
     color: white;
     transition: all 0.7s ease;
+    transform: scale(105%);
   }
 
   .logo {
@@ -47,11 +50,21 @@ export const Wrapper = styled.section`
     width: 5vw;
   }
 
+  .cart-btn {
+    text-decoration: none;
+    color: white;
+  }
+
+  .cart-btn:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(105%);
+  }
+
   .cart {
     font-size: 1.1rem;
     display: flex;
     place-items: center;
-    padding: 4px 10px;
+    padding: 4px 12px;
     border-radius: 50%;
     background-color: #fe6629;
     cursor: pointer;

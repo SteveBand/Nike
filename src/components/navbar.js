@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Wrapper } from "../styles/navStyle";
 import { SiNike } from "react-icons/si";
 import { BsCart3, BsList } from "react-icons/bs";
+
 export function Nav() {
   return (
     <React.StrictMode>
@@ -11,16 +13,16 @@ export function Nav() {
         </div>
         <div className="links">
           <ul>
-            <li>HOME</li>
+            <Link className="link-btn" to={"/"}>HOME</Link>
             <li>ABOUT</li>
             <li>PRODUCTS</li>
             <li>SUPPORT</li>
           </ul>
         </div>
         <div className="cart-more">
-          <div className="cart">
+          <Link to="cart" className="cart cart-btn">
             <BsCart3 />
-          </div>
+          </Link>
           <div className="list">
             <BsList className="list-btn" />
           </div>
