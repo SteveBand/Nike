@@ -81,8 +81,42 @@ export const Wrapper = styled.section`
     color: #f8672e;
     text-decoration: underline;
   }
+`;
 
-  .empty-cart {
-    
+export const EmptyWrapper = styled.section`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .empty-msg {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/5400/5400905.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 500px;
+    height: 500px;
+  }
+  h1{
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    font-size: 2rem;
+    color: #FE792F;
+  }
+
+  .back-btn {
+    padding: 1rem;
+    background-color: #FE9931;
+    color: white;
+    border-radius: 20%;
+    text-decoration: none;
+  }
+
+  .back-btn:hover{
+    transition: all 0.6s ease-in-out;
+    transform: scale(120%);
   }
 `;
