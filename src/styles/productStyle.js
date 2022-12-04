@@ -4,28 +4,27 @@ export const Wrapper = styled.section`
   display: flex;
   text-align: center;
   position: relative;
-  top: 0;
-  left: 0;
-  max-width: 100%;
+  justify-content: center;
   max-height: 80vh;
 
   .img-holder {
     position: relative;
     margin: 0 auto;
-    padding: 0;
     max-width: 50%;
     max-height: 60vh;
+    justify-self: center;
   }
+
   img {
-    max-width: 40vw;
-    max-height: 65vh;
+    max-width: 500px;
+    max-height: 700px;
   }
 
   .next {
     display: flex;
     align-items: center;
-    width: 27rem;
-    height: 10rem;
+    width: clamp(12%, 20%, 25%);
+    height: clamp(20%, 30%, 45%);
     position: absolute;
     bottom: 5%;
     right: 0;
@@ -42,6 +41,8 @@ export const Wrapper = styled.section`
     color: #727276;
     max-width: 300px;
     text-align: left;
+    min-width: 150px;
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1.2rem);
   }
 
   .next-btn {
@@ -57,13 +58,14 @@ export const Wrapper = styled.section`
   .btn-icon {
     color: #e15c29;
     font-size: 1.75rem;
+    font-size: clamp(1rem, 0.85rem + 0.75vw, 1.75rem);
   }
 
   .prev {
     display: flex;
     align-items: center;
-    width: 27rem;
-    height: 10rem;
+    width: clamp(12%, 20%, 25%);
+    height: clamp(20%, 30%, 45%);
     position: absolute;
     bottom: 5%;
     left: 0;
@@ -79,9 +81,10 @@ export const Wrapper = styled.section`
   .prev p {
     color: #727276;
     max-width: 300px;
+    min-width: 150px;
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1.2rem);
     text-align: right;
     position: relative;
-    left: 0;
   }
 
   .prev-btn {
@@ -89,7 +92,7 @@ export const Wrapper = styled.section`
     margin: auto;
     margin-right: -10px;
     fill: #e15c29;
-    padding: 10px;
+    padding: clamp(4px, 2px + 4vw, 10px);
     border: 1px solid white;
     border-radius: 100%;
     cursor: pointer;
@@ -98,13 +101,67 @@ export const Wrapper = styled.section`
   .detail {
     position: absolute;
     top: 0;
-    left: 5%;
-    font-size: 4rem;
-    min-width: 100px;
+    left: 10%;
+    font-size: clamp(1rem, 1rem + 2vw, 4rem);
     overflow-y: hidden;
-    max-height: 350px;
+    min-height: 50px;
+    max-height: 250px;
     max-width: 600px;
+    width: clamp(10rem, 25rem, 30rem);
     color: white;
     font-family: "Noto Serif Khojki", serif;
+  }
+
+  .do-it {
+    display: none;
+  }
+
+  @media screen and (max-width: 480px) {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .switch-btn {
+      display: none;
+    }
+
+    img {
+      max-width: 320px;
+      max-height: 250px;
+    }
+
+    .img-holder {
+      max-width: 40%;
+      max-height: 50vh;
+    }
+
+    .detail {
+      position: relative;
+      max-width: 200px;
+      font-size: 1.7rem;
+      top: 20%;
+      left: 0;
+      color: gray;
+      opacity: 1;
+    }
+
+    .do-it {
+      display: block;
+      position: absolute;
+      top: 7%;
+      font-size: 2rem;
+      color: gray;
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      letter-spacing: 5px;
+      font-family: "Mukta", sans-serif;
+    }
+
+    .logo {
+      font-size: 3rem;
+      margin-left: 15px;
+      color: cornsilk;
+    }
   }
 `;

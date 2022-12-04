@@ -81,7 +81,35 @@ export const Wrapper = styled.section`
     color: #f8672e;
     text-decoration: underline;
   }
+
+  @media screen and (max-width: 480px) {
+    .inc-dec {
+      margin-top: 5%;
+    }
+  }
 `;
+
+//BACK HOME BUTTON ///
+
+export const BtnContainer = styled.section`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+
+  .btn {
+    padding: 0.5rem 0.8rem;
+    background-color: #fe9931;
+    color: white;
+    border-radius: 20%;
+    text-decoration: none;
+  }
+`;
+
+///EMPTY CART STYLE///
 
 export const EmptyWrapper = styled.section`
   width: 100%;
@@ -99,24 +127,34 @@ export const EmptyWrapper = styled.section`
     width: 500px;
     height: 500px;
   }
-  h1{
+  h1 {
     position: absolute;
     top: 40%;
     left: 15%;
     font-size: 2rem;
-    color: #FE792F;
+    color: #fe792f;
   }
 
   .back-btn {
     padding: 1rem;
-    background-color: #FE9931;
+    background-color: #fe9931;
     color: white;
     border-radius: 20%;
     text-decoration: none;
   }
 
-  .back-btn:hover{
+  .back-btn:hover {
     transition: all 0.6s ease-in-out;
     transform: scale(120%);
+  }
+
+  @media screen and (max-width: 480px) {
+    .empty-msg {
+      max-width: 300px;
+      max-height: 300px;
+    }
+    h1 {
+      top: 10%;
+    }
   }
 `;

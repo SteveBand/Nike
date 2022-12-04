@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CartProduct } from "../components/cartProduct";
 import { EmptyCart } from "../components/emptyCart";
 import { UseGlobalContext } from "../context/context";
-import { Wrapper } from "../styles/cartStyle";
+import { BtnContainer, Wrapper } from "../styles/cartStyle";
 
 export const Cart = () => {
   const { total, cart } = UseGlobalContext();
@@ -20,6 +21,11 @@ export const Cart = () => {
           </div>
         )}
       </Wrapper>
+      <BtnContainer>
+        <Link to="/" className="btn">
+          BACK HOME
+        </Link>
+      </BtnContainer>
     </React.StrictMode>
   );
 };

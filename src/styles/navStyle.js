@@ -4,7 +4,6 @@ export const Wrapper = styled.section`
   width: 100%;
   height: 15vh;
   display: flex;
-  justify-content: space-evenly;
   color: white;
   place-items: center;
 
@@ -81,24 +80,20 @@ export const Wrapper = styled.section`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 480px) {
-    height: 9vh;
-    .logo {
-      font-size: 2rem;
-      left: 2%;
-      margin-right: 2rem;
-    }
+  @media screen and (max-width: 500px) {
+    display: none;
     .links {
-      min-width: 70%;
-      max-width: 250px;
-      margin: auto;
+      min-width: 100px;
+      max-width: 150px;
+      margin: 0;
     }
     ul {
-      width: 80%;
+      width: 150px;
       justify-content: space-around;
     }
-    li {
-      font-size: 14px;
+    li,
+    .link-btn {
+      font-size: 5px;
       padding: 0 0.25rem;
     }
     .cart-more {
@@ -118,6 +113,7 @@ export const Wrapper = styled.section`
     .list {
       padding: 0;
       margin: 6px;
+      display: block;
     }
   }
 `;

@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.footer`
+  position: absolute;
+  bottom: -40%;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 25vh;
   font-family: "Josefin Sans", sans-serif;
-
   .price-btn {
     padding: 1.2rem 3.4rem;
     font-size: 1.3rem;
@@ -28,5 +29,20 @@ export const Wrapper = styled.footer`
   .cart-btn:hover {
     transition: all 0.5s ease-in;
     transform: scale(110%);
+  }
+
+  @media screen and (max-width: 480px) {
+    bottom: 0;
+  }
+
+  .cart-btn {
+    padding: 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .price-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    margin-right: 1rem;
   }
 `;

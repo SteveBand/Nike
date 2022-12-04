@@ -7,6 +7,8 @@ export const Context = ({ children }) => {
   const [shoe, setShoe] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const [mobile, setMobile] = useState(false);
+
   const removeItem = (id) => {
     setCart([...cart].filter((item) => item.id !== id));
   };
@@ -54,6 +56,15 @@ export const Context = ({ children }) => {
     newTotal = parseFloat(newTotal.toFixed(2));
     setTotal(newTotal);
   }, [cart]);
+
+  useEffect(() => {
+    if (window.innerWidth <= 500) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+    console.log(setMobile)
+  }, []);
 
   return (
     <shoeContext.Provider
