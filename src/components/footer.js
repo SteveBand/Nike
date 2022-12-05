@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { UseGlobalContext } from "../context/context";
 import { Wrapper } from "../styles/footerStyle";
 
 export function Footer() {
   const { shoe, cart, setCart, increase } = UseGlobalContext();
   const { price } = shoe;
+
+  //Adds an Item to the Cart
 
   const addItem = () => {
     const { id, img, detail, price } = shoe;
@@ -19,9 +21,6 @@ export function Footer() {
     console.log(cart);
   };
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
   return (
     <React.StrictMode>
       <Wrapper>

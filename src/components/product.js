@@ -2,20 +2,10 @@ import React from "react";
 import { Footer } from "./footer";
 import { UseGlobalContext } from "../context/context";
 import { Wrapper } from "../styles/productStyle";
-import { ShoesData } from "../context/data";
 import { SiNike } from "react-icons/si";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 export const Product = () => {
-  const { setIndex, shoe } = UseGlobalContext();
-  const checkIndex = (num) => {
-    if (num > ShoesData.length - 1) {
-      return 0;
-    }
-    if (num < 0) {
-      return ShoesData.length - 1;
-    }
-    return num;
-  };
+  const { setIndex, shoe, checkIndex } = UseGlobalContext();
 
   const handleNext = () => {
     setIndex((index) => {
@@ -30,12 +20,14 @@ export const Product = () => {
       return checkIndex(newIndex);
     });
   };
-  const { img, detail, known } = shoe;
 
+  const { img, detail, known } = shoe;
   return (
     <React.StrictMode>
       <Wrapper>
-        <h1 className="do-it">JUST DO IT <SiNike className="logo"/></h1>
+        <h1 className="do-it">
+          JUST DO IT <SiNike className="logo" />
+        </h1>
         <div className="detail">{detail}</div>
         <div className="img-holder">
           <img src={img} />

@@ -13,7 +13,9 @@ export function Nav() {
         </div>
         <div className="links">
           <ul>
-            <Link className="link-btn" to={"/"}>HOME</Link>
+            <Link className="link-btn" to={"/"}>
+              HOME
+            </Link>
             <li>ABOUT</li>
             <li>PRODUCTS</li>
             <li>SUPPORT</li>

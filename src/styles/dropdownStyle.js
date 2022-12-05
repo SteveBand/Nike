@@ -46,7 +46,7 @@ export const Wrapper = styled.section`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 900px) {
     display: flex;
     transform: ${(props) =>
       props.open ? "translateX(0)" : "translateX(-95%)"};

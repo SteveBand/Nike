@@ -7,12 +7,25 @@ export const Context = ({ children }) => {
   const [shoe, setShoe] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const [mobile, setMobile] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
+  // Remove Item from Cart //
   const removeItem = (id) => {
     setCart([...cart].filter((item) => item.id !== id));
   };
 
+  // Checks the index & makes sure it won't choose unreasonable number//
+  const checkIndex = (num) => {
+    if (num > ShoesData.length - 1) {
+      return 0;
+    }
+    if (num < 0) {
+      return ShoesData.length - 1;
+    }
+    return num;
+  };
+  // increasing a specific item amount from the cart List
   const increase = (id) => {
     const newCart = [...cart].map((item) => {
       if (item.id === id) {
@@ -23,7 +36,7 @@ export const Context = ({ children }) => {
     });
     setCart(newCart);
   };
-
+  // decreasing a specific item amount from the cart List
   const decrease = (id, amount) => {
     if (amount === 1) {
       return removeItem(id);
@@ -39,13 +52,48 @@ export const Context = ({ children }) => {
     }
   };
 
-  const clearCart = () => {
-    setCart([]);
-  };
+  // const clearCart = () => {
+  //   setCart([]);
+  // };
+
+  //useEffect Swipes for touch Screens
+
+  useEffect(() => {
+    document.addEventListener("touchstart", (e) => {
+      setTouchStart(e.targetTouches[0].clientX);
+    });
+
+    document.addEventListener("touchend", (e) => {
+      setTouchEnd(e.changedTouches[0].clientX);
+    });
+
+    if (touchStart - touchEnd >= 420) {
+      setIndex((index) => {
+        let newIndex = index + 1;
+        return checkIndex(newIndex);
+      });
+    }
+
+    if (touchStart + touchEnd >= 420) {
+      setIndex((index) => {
+        let newIndex = index + 1;
+        return checkIndex(newIndex);
+      });
+    }
+
+    const removeEvents = () => {
+      document.removeEventListener("touchstart", setTouchStart);
+      document.removeEventListener("touchend", setTouchEnd);
+    };
+
+    return () => removeEvents();
+  }, [touchEnd]);
 
   useEffect(() => {
     setShoe(ShoesData[index]);
   }, [index]);
+
+  //Checks the total amount price of the CART
 
   useEffect(() => {
     let newTotal = cart.reduce((total, item) => {
@@ -56,15 +104,6 @@ export const Context = ({ children }) => {
     newTotal = parseFloat(newTotal.toFixed(2));
     setTotal(newTotal);
   }, [cart]);
-
-  useEffect(() => {
-    if (window.innerWidth <= 500) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-    console.log(setMobile)
-  }, []);
 
   return (
     <shoeContext.Provider
@@ -78,6 +117,7 @@ export const Context = ({ children }) => {
         increase,
         decrease,
         total,
+        checkIndex,
       }}>
       {children}
     </shoeContext.Provider>

@@ -80,40 +80,7 @@ export const Wrapper = styled.section`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 900px) {
     display: none;
-    .links {
-      min-width: 100px;
-      max-width: 150px;
-      margin: 0;
-    }
-    ul {
-      width: 150px;
-      justify-content: space-around;
-    }
-    li,
-    .link-btn {
-      font-size: 5px;
-      padding: 0 0.25rem;
-    }
-    .cart-more {
-      width: 5%;
-      right: 10%;
-      height: 3rem;
-      padding: 0;
-      margin: 0;
-      align-items: center;
-    }
-
-    .cart {
-      font-size: 0.9rem;
-      max-height: 1rem;
-      padding: 6px;
-    }
-    .list {
-      padding: 0;
-      margin: 6px;
-      display: block;
-    }
   }
 `;

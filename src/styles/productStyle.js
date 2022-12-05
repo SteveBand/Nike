@@ -103,7 +103,6 @@ export const Wrapper = styled.section`
     top: 0;
     left: 10%;
     font-size: clamp(1rem, 1rem + 2vw, 4rem);
-    overflow-y: hidden;
     min-height: 50px;
     max-height: 250px;
     max-width: 600px;
@@ -116,7 +115,7 @@ export const Wrapper = styled.section`
     display: none;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 900px) {
     min-height: 100vh;
     justify-content: center;
     align-items: center;

@@ -31,7 +31,7 @@ export const Wrapper = styled.footer`
     transform: scale(110%);
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 900px) {
     bottom: 0;
   }
 
